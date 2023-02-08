@@ -1,2 +1,2 @@
 # professorReviews
-[Link to page](https://link-url-here.org) 
+[Link to page]( https://gulshank721.github.io/professorReviews/) 
