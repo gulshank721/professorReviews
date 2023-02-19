@@ -25,6 +25,7 @@ function getData(data){
 function populateState(list){
     const stateList =[];
     
+    //getting list of state from colleges.json file
     list.forEach(element => {
         if(!stateList.includes(element.state)){
             // console.log(stateList.includes(element));
@@ -35,6 +36,7 @@ function populateState(list){
     console.log("states ",stateList);
     const stateSelect = document.getElementById("stateSelect");
 
+    //creating option of select element for each state in stateList
     for (let i in stateList) {
         // console.log(stateList[i]);
         let option = document.createElement("option");
@@ -49,7 +51,7 @@ function populateState(list){
 
 function populateUniversity(selectedState,list){
 
-    const college = document.getElementById("college");
+    const college = document.getElementById("institute");
         
    // clearing previously filled options
         var i, L = college.options.length - 1;
@@ -81,3 +83,21 @@ function populateUniversity(selectedState,list){
 
     console.log(college.options.length);
 }
+
+//
+// const professorName = document.getElementById("professorName");
+const instituteName = document.getElementById("institute");
+const instituteState = document.getElementById("stateSelect");
+const form1 = document.getElementById("form1");
+
+form1.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    // localStorage.setItem('professorName', professorName.value);
+    localStorage.setItem('instituteName', institute.value);
+    localStorage.setItem('instituteState', stateSelect.value);
+    // console.log(localStorage, lastName);
+   
+    //on submit go to specified page
+    window.location.href = 'rateProfessor.html';
+})

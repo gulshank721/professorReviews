@@ -1,13 +1,72 @@
-const lastName = document.getElementById("lastName");
-const college = document.getElementById("college");
-const form1 = document.getElementById("form1");
+// getiing form1 data
+const instituteState = localStorage.getItem('instituteState');
+const instituteName = localStorage.getItem('instituteName');
+console.log(instituteState,instituteName);
+document.getElementById('instituteName').value = instituteName;
+document.getElementById('instituteState').value = instituteState;
 
-form1.addEventListener('submit', function(e){
+//controlling final form submit
+function getData(){
+    const form2 = document.getElementById('form2');
+    const form = new FormData(form2); // creates form object
+    
+    const data ={
+        anonymity: form.get('anonymity'),
+        reviewerName: form.get('reviewerName'),
+        professorName: form.get('professorName'),
+        instituteName: form.get("instituteName"),
+        instituteState: form.get('instituteState'),
+        instituteCity: form.get('instituteCity'),
+        researchArea: form.get('researchArea'),
+        professorExpertise: form.get('professorExpertise'),
+        helpfullness: form.get('helpfullness'),
+        behaviour: form.get('behaviour'),
+        youTimeSpend: form.get('youTimeSpend'),
+        phdTimeToSpend: form.get('phdTimeToSpend'),
+        msTimeToSpend: form.get('msTimeToSpend'),
+        recommend: form.get('recommend')
+    }
+    return data;
+}
+
+// console.log(data);
+form2.addEventListener('submit', async(e)=>{
+    
     e.preventDefault();
+    const fd = getData();
+    // const fd = new FormData(form2);
+    console.log('form-data ', fd);
+    // console.log('event To register', e);
 
-    localStorage.setItem('last-name', lastName.value);
-    localStorage.setItem('college', college.value);
-    // console.log(localStorage, lastName);
+   return await fetch('http://localhost:3000/' + 'reviews', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        //    'Content-Type': 'multipart/form-data',
+        },
+        body: JSON.stringify(fd),
+        // body: fd
+       
+      //   credentials: 'same-origin'
+    })
+    .then(response => {
+      console.log(response);
+        if (response.ok) {
+            alert("review submitted successfully."+response.statusText);
+            window.location.assign("submitReview.html");
+            return response;
+        }
+        else {
+            var error = new Error('Error ' + response.status + ': ' + response.statusText);
+            error.response = response;
+           throw error;
+        }
+    },
+    error => {
+        var errmess = new Error(error.message);
+        throw errmess;
+    })
+    .then(response => response.json())
+    .catch(error => { alert('review could not be submitted: '+ error); })
+  });
 
-    window.location.href = 'rateProfessor.html';
-})

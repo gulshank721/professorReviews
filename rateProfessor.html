@@ -44,77 +44,97 @@
         <div class="col-md-10">
             <h2>Rate Your Professor</h2>
             <hr>
-            <form class="form-inline" action="" method="post">
-                <input id="csrf_token" name="csrf_token" type="hidden" value="Ijc1ZjhiOGY2ZjBmNjE0YmExMDM0MjdjMzRiOWZmYjE0OTJlYWZkZDgi.FsawNw.4f1R_10TB3BZq8XMeB5hIG7Nd_M">
-    
+            <form id="form2" class="form-inline" >
+                <!-- <input id="csrf_token" name="csrf_token" type="hidden" value="Ijc1ZjhiOGY2ZjBmNjE0YmExMDM0MjdjMzRiOWZmYjE0OTJlYWZkZDgi.FsawNw.4f1R_10TB3BZq8XMeB5hIG7Nd_M"> -->
+                <div>
+                    <label>Do you want to submit an anonymous review?</label><br>
+                    <input class="form-check-inline" type="radio" name="anonymity"  value=false>No, its okay to have my identity open<br>   
+                    <input class="form-check-inline" type="radio" name="anonymity"  value=true checked>Yes, I want to be anonymous<br>  
+                </div>
+                
+
                 <table class="table table-striped table-bordered">
-                    <tbody><tr>
-                        <td><strong>Professor's First Name:</strong></td>
+                    <tbody>
+                        <tr>
+                            <td><strong>You name? (it will be hidden if you chose to maintain anonymity):</strong></td>
+                            <td class="text-center">
+                                <input class="form-control" id="reviewerName" name="reviewerName" required="required" type="text" value="">
+                                
+                            </td>
+                        </tr>
+
+                    <tr>
+                        <td><strong>Professor's Name:</strong></td>
                         <td class="text-center">
-                            <input class="form-control" id="firstname" name="firstname" required="required" type="text" value="">
+                            <input class="form-control" id="professorName" name="professorName" required="required" type="text" value="">
                             
                         </td>
                     </tr>
+                  
                     <tr>
-                        <td><strong>Professor's Last Name:</strong></td>
-                        <td class="text-center">
-                            <input class="form-control" id="lastname" name="lastname" required="required" type="text"  >
-                            
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>School where course was taken:</strong></td>
-                        <td class="text-center" id="college">
+                        <td><strong>Institute Name:</strong></td>
+                        <td class="text-center" >
                             <!-- B. R. Ambedkar Bihar University(Bihar) -->
+                            <input class="form-control " id="instituteName" name="instituteName" required="required" type="text" value="">
                          
                         </td>
                     </tr>
                     <tr>
-                        <td><strong>Course ID or Course Title:</strong></td>
+                        <td><strong>Institute State:</strong></td>
+                        <td class="text-center" >
+                            <input class="form-control disabled" id="instituteState" name="instituteState" required="required" type="text" value="">
+                            <!-- Bihar -->
+                         
+                        </td>
+                    </tr> 
+                    <tr>
+                        <td><strong>Institute City:</strong></td>
+                        <td class="text-center" id="instituteCity">
+                            <!-- Patna -->
+                            <input class="form-control" id="instituteCity" name="instituteCity" required="required" type="text" value="">
+                         
+                        </td>
+                    </tr> 
+                    
+                    <tr>
+                        <td><strong>Research area you worked on (provide short phrases like natural language processing, computer vision. separate by comma):</strong></td>
                         <td class="text-center">
-                            <input class="form-control" id="courseID" name="courseID" required="required" type="text" value="">
+                            <input class="form-control" id="researchArea" name="researchArea" required="required" type="text" value="">
                             
                         </td>
                     </tr>
                     <tr>
-                        <td><strong>School Term:</strong></td>
+                        <td><strong>Area of expertise of the professor? (phrases separated by comma):</strong></td>
                         <td class="text-center">
-                           <select class="form-control" id="term" name="term" required="required">
-                              <option value="0">-- Select School Term --</option>
-                              <option value="207">August - December 2022</option>
-                              <option value="206">June - August 2022</option>
-                              <option value="205">January - May 2022</option>
-                              <option value="203">August - December 2021</option>
-                              <option value="202">June - August 2021</option>
-                           </select>
+                            <input class="form-control" id="professorExpertise" name="professorExpertise" required="required" type="text" value="">
                             
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-6">
-                            <strong>1. How would you rate this professor's ability to explain concepts clearly?</strong>
+                            <strong>1. How helpful is the professor in providing technical feedback on a research subject?</strong>
                         </td>
                         <!--https://github.com/LunarLogic/starability-->
                         <td class="col-md-6">
     
                             <fieldset class="starability-basic text-center">
     
-                                <input type="radio" id="q1no-rate-basic" class="input-no-rate" name="q1" value="0" checked="" aria-label="No rating." required="">
+                                <input type="radio" id="q1no-rate-basic" class="input-no-rate" name="helpfullness" value="0" checked="" aria-label="No rating." required="">
     
                                 
-                                <input id="q1-0" name="q1" type="radio" value="1">
+                                <input id="q1-0" name="helpfullness" type="radio" value="1">
                                 <label for="q1-0">one</label>
                                 
-                                <input id="q1-1" name="q1" type="radio" value="2">
+                                <input id="q1-1" name="helpfullness" type="radio" value="2">
                                 <label for="q1-1">two</label>
                                 
-                                <input id="q1-2" name="q1" type="radio" value="3">
+                                <input id="q1-2" name="helpfullness" type="radio" value="3">
                                 <label for="q1-2">three</label>
                                 
-                                <input id="q1-3" name="q1" type="radio" value="4">
+                                <input id="q1-3" name="helpfullness" type="radio" value="4">
                                 <label for="q1-3">four</label>
                                 
-                                <input id="q1-4" name="q1" type="radio" value="5">
+                                <input id="q1-4" name="helpfullness" type="radio" value="5">
                                 <label for="q1-4">five</label>
                                 
     
@@ -126,28 +146,29 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong>2. How would you rate this professor's style of teaching?</strong>
+                            <strong>2. How is the behavior of the professor with his/her research scholars?
+                                *</strong>
                         </td>
                         <td class="col-md-6 text-center">
     
                             <fieldset class="starability-basic">
     
-                                <input type="radio" id="q2no-rate-basic" class="input-no-rate" name="q2" value="0" checked="" aria-label="No rating." required="">
+                                <input type="radio" id="q2no-rate-basic" class="input-no-rate" name="behaviour" value="0" checked="" aria-label="No rating." required="">
     
                                 
-                                <input id="q2-0" name="q2" type="radio" value="1">
+                                <input id="q2-0" name="behaviour" type="radio" value="1">
                                 <label for="q2-0">one</label>
                                 
-                                <input id="q2-1" name="q2" type="radio" value="2">
+                                <input id="q2-1" name="behaviour" type="radio" value="2">
                                 <label for="q2-1">two</label>
                                 
-                                <input id="q2-2" name="q2" type="radio" value="3">
+                                <input id="q2-2" name="behaviour" type="radio" value="3">
                                 <label for="q2-2">three</label>
                                 
-                                <input id="q2-3" name="q2" type="radio" value="4">
+                                <input id="q2-3" name="behaviour" type="radio" value="4">
                                 <label for="q2-3">four</label>
                                 
-                                <input id="q2-4" name="q2" type="radio" value="5">
+                                <input id="q2-4" name="behaviour" type="radio" value="5">
                                 <label for="q2-4">five</label>
                                 
     
@@ -158,168 +179,101 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong>3. Was this professor easily understandable with regard to voice, tone, and pronunciation?</strong>
+                            <strong>How much time have you spend working with the professor? 
+                                *</strong>
                         </td>
                         <td class="col-md-6 text-center">
     
-                            <fieldset class="starability-basic">
+                            <select class="form-control" id="youTimeSpend" name="youTimeSpend" >
+                              <option value="">--Select college--</option>
+                              <option value="1 Years">1 Years</option>
+                              <option value="2 Years">2 Years</option>
+                              <option value="3 Years">3 Years</option>
+                              <option value="4 Years">4 Years</option>
+                              <option value="5 Years">5 Years</option>
+                              <option value="6 Years">6 Years</option>
+                              <option value="7 Years">7 Years</option>
+                              <option value="8 Years">8 Years</option>
+                              <option value="9 Years">9 Years</option>
+                              <option value="10 Years">10 Years</option>
+                              </select>
+                              
+                            
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <strong>How much time does a PhD research scholar spend ( time from admission to defense seminar) working under the professor? Average number of years. 
+                                *</strong>
+                        </td>
+                        <td class="col-md-6 text-center">
     
-                                <input type="radio" id="q3no-rate-basic" class="input-no-rate" name="q3" value="0" checked="" aria-label="No rating." required="">
+                            <select class="form-control" id="phdTimeToSpend" name="phdTimeToSpend" >
+                              <option value="">--Select college--</option>
+                              <option value="3 Years">3 Years</option>
+                              <option value="4 Years">4 Years</option>
+                              <option value="5 Years">5 Years</option>
+                              <option value="6 Years">6 Years</option>
+                              <option value="7 Years">7 Years</option>
+                              <option value="8 Years">8 Years</option>
+                              <option value="9 Years">9 Years</option>
+                              <option value="10 Years">10 Years</option>
+                              </select>
+                              
+                            
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <strong>How much time does a MS (master of science, same as the one people go abroad to do) student spend (time from admission to defense seminar) working under the professor? Average number of years. 
+                                *</strong>
+                        </td>
+                        <td class="col-md-6 text-center">
     
-                                
-                                <input id="q3-0" name="q3" type="radio" value="1">
-                                <label for="q3-0">one</label>
-                                
-                                <input id="q3-1" name="q3" type="radio" value="2">
-                                <label for="q3-1">two</label>
-                                
-                                <input id="q3-2" name="q3" type="radio" value="3">
-                                <label for="q3-2">three</label>
-                                
-                                <input id="q3-3" name="q3" type="radio" value="4">
-                                <label for="q3-3">four</label>
-                                
-                                <input id="q3-4" name="q3" type="radio" value="5">
-                                <label for="q3-4">five</label>
-                                
-    
-                                <span class="starability-focus-ring"></span>
-                            </fieldset>
+                            <select class="form-control  " id="msTimeToSpend" name="msTimeToSpend" >
+                              <option value="">--Select college--</option>
+                              <option value="2 Years">2 Years</option>
+                              <option value="3 Years">3 Years</option>
+                              <option value="4 Years">4 Years</option>
+                              <option value="5 Years">5 Years</option>
+                              
+                              </select>
+                              
                             
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <strong>4. What was the attendance policy for this class?</strong>
+                            <strong>Would you recommend this professor to someone to work as a research scholar (PhD or MS or any other research degree having no defined time limit)?</strong>
                         </td>
                         <td class="col-md-6 text-center">
-                            <select class="form-control" id="q4" name="q4" required="required"><option value="0">-- Select Attendance Policy --</option><option value="28">Attendance is not required</option><option value="29">Attendance is required</option><option value="30">Attendance is not required, but recommended</option></select>
+                            <select class="form-control" id="recommend" name="recommend" required="required">
+                                <option value="0">-- choose --</option><option value="Strong NO">Strong NO</option><option value="NO"> No </option><option value="I don't know">I don't know</option>
+                                <option value="YES">YES</option>
+                                <option value="Strong YES">Strong YES</option>
+                            </select>
                             
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            <strong>5. Were there quizzes in this class?</strong>
-                        </td>
-                        <td class="col-md-6 text-center">
-                            <select class="form-control" id="q5" name="q5" required="required"><option value="0">-- Select Quiz Policy --</option><option value="31">No quizzes</option><option value="32">Scheduled quizzes</option><option value="33">Unscheduled quizzes</option><option value="34">Both scheduled and unscheduled quizzes</option></select>
-                            
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <strong>6. How would you rate the fairness of examinations given?</strong>
-                        </td>
-                        <td class="col-md-6 text-center">
-    
-                            <fieldset class="starability-basic">
-    
-                                <input type="radio" id="q6no-rate-basic" class="input-no-rate" name="q6" value="0" checked="" aria-label="No rating." required="">
-    
-                                
-                                <input id="q6-0" name="q6" type="radio" value="1">
-                                <label for="q6-0">one</label>
-                                
-                                <input id="q6-1" name="q6" type="radio" value="2">
-                                <label for="q6-1">two</label>
-                                
-                                <input id="q6-2" name="q6" type="radio" value="3">
-                                <label for="q6-2">three</label>
-                                
-                                <input id="q6-3" name="q6" type="radio" value="4">
-                                <label for="q6-3">four</label>
-                                
-                                <input id="q6-4" name="q6" type="radio" value="5">
-                                <label for="q6-4">five</label>
-                                
-    
-                                <span class="starability-focus-ring"></span>
-                            </fieldset>
-                            
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <strong>7. How would you rate the professor's review for exams?</strong>
-                        </td>
-                        <td class="col-md-6 text-center">
-    
-                            <fieldset class="starability-basic">
-    
-                                <input type="radio" id="q7no-rate-basic" class="input-no-rate" name="q7" value="0" checked="" aria-label="No rating." required="">
-    
-                                
-                                <input id="q7-0" name="q7" type="radio" value="1">
-                                <label for="q7-0">one</label>
-                                
-                                <input id="q7-1" name="q7" type="radio" value="2">
-                                <label for="q7-1">two</label>
-                                
-                                <input id="q7-2" name="q7" type="radio" value="3">
-                                <label for="q7-2">three</label>
-                                
-                                <input id="q7-3" name="q7" type="radio" value="4">
-                                <label for="q7-3">four</label>
-                                
-                                <input id="q7-4" name="q7" type="radio" value="5">
-                                <label for="q7-4">five</label>
-                                
-    
-                                <span class="starability-focus-ring"></span>
-                            </fieldset>
-                            
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <table class="table table-bordered">
-                                <tbody><tr>
-                                    <td class="col-md-6"><li><em>What type of exams did this professor give?</em></li></td>
-                                    <td class="col-md-6 text-center">
-                                        <select class="form-control" id="q7a" name="q7a" required="required"><option value="0">-- Select Exam Types --</option><option value="1">Multiple Choice</option><option value="2">Essay</option><option value="3">True/False</option><option value="4">A Combination of Essay, Multiple Choice, and/or True/False</option><option value="5">Written Problems</option><option value="6">Take Home - Multiple Choice</option><option value="7">Take Home - Essay</option><option value="8">Take Home - True/False</option><option value="9">Take Home - Combination (Essay, Multiple Choice, and/or True/False)</option><option value="10">Take Home - Written Problems</option><option value="11">Open Book/Cheat Sheet - Multiple Choice</option><option value="12">Open Book/Cheat Sheet - Essay</option><option value="13">Open Book/Cheat Sheet - True/False</option><option value="14">Open Book/Cheat Sheet - Combination (Essay, Multiple Choice, and/or True/False)</option><option value="15">Open Book/Cheat Sheet - Written Problems</option><option value="16">Online/Computer Based - Multiple Choice</option><option value="17">Online/Computer Based - Essay</option><option value="18">Online/Computer Based - True/False</option><option value="19">Online/Computer Based - Comination (Essay, Multiple-Choice, and/or True/False)</option><option value="20">Online/Computer Based - Written Problems</option><option value="35">Other</option></select>
-                                        
-                                    </td>
-                                </tr><tr>
-                                    <td class="col-md-6"><li><em>Did this professor adjust exam grades based upon the performance in the class?</em></li></td>
-                                    <td class="col-md-6 text-center">
-                                        <select class="form-control" id="q7b" name="q7b" required="required"><option value="0">-- Select Exam Adjustments --</option><option value="21">Never adjusted exam grades</option><option value="22">Adjusted exam grades as necessary</option><option value="23">Always adjusted exam grades</option></select>
-                                        
-                                    </td>
-                                </tr>
-                            </tbody></table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <strong>8. Would you recommend this professor?</strong>
-                        </td>
-                        <td class="col-md-6 text-center">
-                            <select class="form-control" id="q8" name="q8" required="required"><option value="0">-- Select your Recommendation --</option><option value="24">Absolutely Yes!</option><option value="25">Yes</option><option value="26">Only if you have no choice</option><option value="27">Never</option></select>
-                            
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <strong>9. Comments or suggestions for others considering this professor?</strong><br>
-                            <blockquote><p><samp><textarea class="form-control" cols="240" id="q9" name="q9" rows="6"></textarea></samp></p></blockquote>
-                        </td>
-                    </tr>
-                    <tr>
+                    
+                    <!-- <tr>
                         <td colspan="2">
                             <strong>10. Comments, suggestions, or feedback to our dev team regarding our site (This is for internal purposes and will not be published)?</strong><br>
                             <blockquote><p><samp><textarea class="form-control" cols="240" id="q10" name="q10" rows="6"></textarea></samp></p></blockquote>
                         </td>
                     </tr>
-                    <tr>
+                    <tr> -->
                         <td colspan="2">
-                            <input name="state" id="state" type="hidden" value="71">
+                            <!-- <input name="state" id="state" type="hidden" value="71">
                             <input name="stateName" id="state" type="hidden" value="Bihar">
                             <input name="school" id="school" type="hidden" value="3230">
-                            <input name="schoolName" id="school" type="hidden" value="B. R. Ambedkar Bihar University">
+                            <input name="schoolName" id="school" type="hidden" value="B. R. Ambedkar Bihar University"> -->
                             
     
     
-                            <input class="btn btn-default btn-sm" id="submit" name="submit" type="submit" value="submit">
+                            <input class="btn text-bg-dark" id="submit" name="submit" type="submit" value="submit">
                         </td>
                     </tr>
                 </tbody></table>
@@ -327,16 +281,12 @@
         </div>
     </section>
 
-<script>
+<!-- <script>
 
-    const lastName = localStorage.getItem('last-name');
-    const college = localStorage.getItem('college');
-    console.log(lastName,college);
+    
 
-    document.getElementById('lastname').value = lastName;
-    document.getElementById('college').textContent = college;
-
-</script>
+</script> -->
+<script src ="./rateProfessor.js"></script>
 <!-- bootstrap JS -->
 <!-- <script src ="./stateCitySelector.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>   
