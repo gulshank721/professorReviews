@@ -10,22 +10,28 @@ function getData(){
     const form2 = document.getElementById('form2');
     const form = new FormData(form2); // creates form object
     
-    const data ={
-        anonymity: form.get('anonymity'),
-        reviewerName: form.get('reviewerName'),
-        professorName: form.get('professorName'),
-        instituteName: form.get("instituteName"),
-        instituteState: form.get('instituteState'),
-        instituteCity: form.get('instituteCity'),
-        researchArea: form.get('researchArea'),
-        professorExpertise: form.get('professorExpertise'),
-        helpfullness: form.get('helpfullness'),
-        behaviour: form.get('behaviour'),
-        youTimeSpend: form.get('youTimeSpend'),
-        phdTimeToSpend: form.get('phdTimeToSpend'),
-        msTimeToSpend: form.get('msTimeToSpend'),
-        recommend: form.get('recommend')
+    // jSON Object
+    const data ={  
+        // anonymity: form.get('anonymity'),
+        // reviewerName: form.get('reviewerName'),
+        // professorName: form.get('professorName'),
+        // instituteName: form.get("instituteName"),
+        // instituteState: form.get('instituteState'),
+        // instituteCity: form.get('instituteCity'),
+        // researchArea: form.get('researchArea'),
+        // professorExpertise: form.get('professorExpertise'),
+        // helpfullness: form.get('helpfullness'),
+        // behaviour: form.get('behaviour'),
+        // youTimeSpend: form.get('youTimeSpend'),
+        // phdTimeToSpend: form.get('phdTimeToSpend'),
+        // msTimeToSpend: form.get('msTimeToSpend'),
+        // recommend: form.get('recommend')
     }
+    // or we can do like this
+    for (const [key, value] of form.entries()) {
+        data[key] = value;
+      }
+      console.log(data);
     return data;
 }
 
@@ -45,7 +51,7 @@ form2.addEventListener('submit', async(e)=>{
         //    'Content-Type': 'multipart/form-data',
         },
         body: JSON.stringify(fd),
-        // body: fd
+     
        
       //   credentials: 'same-origin'
     })
