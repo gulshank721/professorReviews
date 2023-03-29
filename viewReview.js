@@ -74,7 +74,7 @@ function populateReviews(reviews){
    })
     
 }
-console.log('reviews ',reviews);
+// console.log('reviews ',reviews);
 
 
 
