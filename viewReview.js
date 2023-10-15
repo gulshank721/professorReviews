@@ -67,7 +67,11 @@ function populateReviews(reviews){
           <p class="m-0">Institute City:<span class="fw-light"> ${review.instituteCity}</span></p>
           <p class="m-0">Institute:<span class="fw-light"> ${review.instituteName}</span></p>
         </div>
-        <span class="badge bg-primary rounded-pill">${review.helpfullness}</span>
+        <div>
+          <p class="badge bg-primary rounded-pill">Helpfullness Score: ${review.helpfullness}</p>
+          <p class="badge bg-warning rounded-pill">Recommendation: ${review.recommend}</p>
+          
+        </div>
       </li>
     `;
     ul.appendChild(li);
