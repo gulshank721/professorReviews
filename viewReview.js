@@ -60,7 +60,7 @@ function populateReviews(reviews){
     // let lei = document.createElement("li");  
     let li = document.createElement("li");
     li.innerHTML = `
-      <li class="list-group-item d-flex justify-content-between align-items-start m-1">
+      <li class="list-group-item text-decoration-none d-flex justify-content-between align-items-start m-1">
         <div class="ms-2 me-auto">
           <h5 class="m-0">${review.professorName}</h5>
           <p class="m-0">Institute State: <span class="fw-light">${review.instituteState}</span></p>

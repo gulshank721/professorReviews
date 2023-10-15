@@ -10,7 +10,7 @@
 <body  class="bg-dark ">
 
         <header class="container-fluid p-0">
-            <nav class="navbar bg- navbar-expand-lg bg-body-secondary mx-0">
+            <nav class="navbar bg- navbar-expand-lg bg-body-tertiary mx-0">
                 <div class="container-fluid">
                   <a class="navbar-brand" href="#">Professor Review System</a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,16 +40,16 @@
               </nav>
         
     </header>
-    <section class="container-fluid bg-body vh-100">
+    <section class="container-fluid bg-body-secondary vh-100">
         <h3 class=" p-3">Subimit Review</h3>
          <div class="p-3 mx-4">
 
           <form id="form1">
             
-            <div class="row  my-3">
-              <label class="col-4" for="stateSelect"> Select Your State</label>
+            <div class="row my-3">
+              <label class="col-5 form-label" for="stateSelect"> Select Your State</label>
               <!-- <input class="col-3"type="option" id="school" name="school" value="school"> -->
-              <select class="col-4" id="stateSelect" name="state" >
+              <select class="col-5 form-select-sm" id="stateSelect" name="state" >
                 <option value="volvo" selected>--Select a state--</option>
                 <!-- <option value="saab">Assam</option>
                 <option value="fiat">Arunachal Pradesh</option>
@@ -60,9 +60,9 @@
             <!-- //below div can be use for select city purpose -->
 
             <div class="row my-3">
-              <label class="col-4" for="institute"> Select Your Institute</label>
+              <label class="col-5 form-label" for="institute"> Select Your Institute</label>
               <!-- <input class="col-3" type="option" id="school" name="school" value="school"> -->
-              <select class="col-4 " id="institute" name="institute" >
+              <select class="col-5 form-select-sm" id="institute" name="institute" >
                 <option value="">--Select college--</option>
               </select>
             </div>
@@ -70,7 +70,7 @@
             
 
             <div class="row">
-              <input class="col-2 mt-4 offset-4" onchange=" " type="submit" id="continue" name="continue" value="Continue">
+              <input class="col-4 btn btn-dark mt-4 offset-4" onchange=" " type="submit" id="continue" name="continue" value="Continue">
             </div>
             
           </form>
