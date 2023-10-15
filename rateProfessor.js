@@ -44,7 +44,7 @@ form2.addEventListener('submit', async(e)=>{
     console.log('form-data ', fd);
     // console.log('event To register', e);
 
-   return await fetch('http://localhost:3000/' + 'reviews', {
+   return await fetch('https://professor-review-server.onrender.com/' + 'reviews', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

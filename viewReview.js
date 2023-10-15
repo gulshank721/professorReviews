@@ -1,6 +1,6 @@
 
 window.onload = function() {
-  fetch('http://localhost:3000/'+'reviews/')
+  fetch('https://professor-review-server.onrender.com/'+'reviews/')
     .then(response => response.json())
     .then(data => {
       // process the data here
@@ -24,7 +24,7 @@ search.addEventListener('click', async(e)=>{
     const searchQuery = document.getElementById("searchQuery").value ;
     console.log(searchQuery);
     console.log("button clicked");
-    await fetch('http://localhost:3000/'+'reviews/search?q='+searchQuery, {
+    await fetch('https://professor-review-server.onrender.com/'+'reviews/search?q='+searchQuery, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
